@@ -12,4 +12,4 @@ This allows us to test thoroughly, and treat our API endpoints more like package
 # TODO:
 - [ ] Create a dynamic installation for all requirements within the plugins
 - [ ] Better testing
-- [ ] Dynamically typed router imports
+- [x] Dynamically typed router imports
