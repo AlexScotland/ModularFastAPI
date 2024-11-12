@@ -1,7 +1,7 @@
 import os
 
 ALL_ROUTERS_TO_INSTALL = []
-CURRENT_DIRECTORY = os.path.dirname(__file__).split("/")[-1]
+CURRENT_DIRECTORY = "lib"
 
 for package_directory in os.scandir(os.path.dirname(__file__)):
     if not package_directory.is_dir() or package_directory.name.startswith("__"):
