@@ -8,10 +8,10 @@ COPY build/requirements.txt .
 RUN pip3 install -r requirements.txt
 
 # Copy main files
-COPY src/ ./src
+COPY . .
 
 # Change directory to src
-WORKDIR /app/api/src/
+WORKDIR /app/api/modular_fastapi/
 
 # Run the server
 CMD ["fastapi", "run"]

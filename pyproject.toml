@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "ModularFastAPI"
+version = "0.1.0"
+description = "FastAPI with Modular Plugin System"
+authors = ["Alex Scotland"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.group.plugins.dependencies]
+fastapi = "^0.115.4"
+uvicorn = "^0.32.0"
+fastapi-offline = "^1.7.2"
+pydantic = "^2.9.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.package-mode]
+package-mode = false 
