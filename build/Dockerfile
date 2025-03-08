@@ -2,16 +2,22 @@ FROM python:3.9-bullseye
 
 WORKDIR /app/api
 
-COPY build/requirements.txt .
-
-# Install base requirements
-RUN pip3 install -r requirements.txt
+# Install Poetry
+RUN pip3 install poetry
 
 # Copy main files
 COPY . .
 
 # Change directory to src
-WORKDIR /app/api/modular_fastapi/
+WORKDIR /app/api/modular-fastapi/
+# Generate poetry.lock inside the container
+RUN poetry lock
+
+# Install core dependencies
+RUN poetry install --without dev --no-root
+
+# Install Watchdog for auto discovery
+RUN poetry add watchdog
 
 # Run the server
-CMD ["fastapi", "run"]
+CMD ["bash", "./start.sh"]
