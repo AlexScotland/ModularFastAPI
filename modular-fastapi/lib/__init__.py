@@ -1,7 +1,9 @@
 import os
 
+from settings import PLUGIN_DIR
+
 ALL_ROUTERS_TO_INSTALL = []
-CURRENT_DIRECTORY = "lib"
+CURRENT_DIRECTORY = PLUGIN_DIR.split("/")[-1]
 
 for package_directory in os.scandir(os.path.dirname(__file__)):
     if not package_directory.is_dir() or package_directory.name.startswith("__"):

@@ -19,3 +19,11 @@ ROUTER = APIRouter(
 @ROUTER.get("/test/")
 def test():
     return Response("Hello")
+
+@ROUTER.get("/test_external_url/")
+def test_external_url():
+    import requests
+    # This will return the response from the URL
+    if requests.get("http://www.google.com").ok:
+        return Response("Success")
+    return Response("Failure")
