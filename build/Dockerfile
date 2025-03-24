@@ -9,8 +9,13 @@ RUN pip3 install poetry
 # Copy only the dependency files
 COPY pyproject.toml poetry.lock ./
 
+# Copy files
+COPY . .
+
+RUN poetry lock
+
 # Install dependencies
-RUN poetry install --without dev --no-root
+RUN poetry install
 
 # Install Watchdog for auto discovery
 RUN poetry add watchdog
@@ -23,9 +28,6 @@ WORKDIR /app
 
 # Copy the installed dependencies from the builder stage
 COPY --from=builder /app/api /app/api
-
-# Copy the rest of the application code
-COPY . .
 
 # Set the working directory
 WORKDIR /app/api/modular-fastapi

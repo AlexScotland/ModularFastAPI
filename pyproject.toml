@@ -8,6 +8,12 @@ packages = [{ include = "modular-fastapi" }]
 [tool.poetry.dependencies]
 python = "^3.9"
 
+# Reference sub-projects as local dependencies
+# sample-package = { path = "/app/api/modular-fastapi/lib/sample-package", develop = true }
+# As we add new packages, we must add them here and rerun `poetry lock` and `poetry install --no-root`
+mfa-stablediffusion = { path = "/app/api/modular-fastapi/lib/mfa-stablediffusion/"}
+
+
 [tool.poetry.group.plugins.dependencies]
 fastapi = "^0.115.4"
 uvicorn = "^0.32.0"

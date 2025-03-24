@@ -27,5 +27,5 @@ class PluginHandler(FileSystemEventHandler):
     
     def force_restart(self, event):
         trigger_file_path = f"{'/'.join(event.src_path.split('/')[0:-2])}/main.py"
-        os.utime(trigger_file_path, None)  # Try updating the timestamp
+        # os.utime(trigger_file_path, None)  # Try updating the timestamp
 
