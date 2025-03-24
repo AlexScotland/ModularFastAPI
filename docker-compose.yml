@@ -7,8 +7,10 @@ services:
     ports:
       - 8000:8000
     env_file: "build/.env"
+    runtime: nvidia
     environment:
       - PYTHONUNBUFFERED=1
+      - NVIDIA_VISIBLE_DEVICES=all
     volumes:
       - "./:/app/api/"
     
