@@ -3,7 +3,7 @@ name = "sample-package"
 version = "0.1.0"
 description = "Example plugin"
 authors = ["Alex Scotland"]
-package-mode = false
+packages = [{ include = "sample-package" }]
 
 [tool.poetry.dependencies]
 python = "^3.9" # Keep
