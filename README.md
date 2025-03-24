@@ -9,7 +9,10 @@ This allows us to test thoroughly, and treat our API endpoints more like package
 
 ![a quick demo of drag and drop](docs/media/readme_demo.gif) 
 
+# Dependencies
+- nvidia-docker2
+
 # TODO:
-- [ ] Create a dynamic installation for all requirements within the plugins
+- [x] Create a dynamic installation for all requirements within the plugins
 - [ ] Better testing
 - [x] Dynamically typed router imports

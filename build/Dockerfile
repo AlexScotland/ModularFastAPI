@@ -1,5 +1,13 @@
 # Stage 1: Build the dependencies
-FROM python:3.9-bullseye AS builder
+FROM nvidia/cuda:12.8.1-cudnn-devel-ubuntu22.04 AS builder
+
+RUN apt update
+
+RUN apt install software-properties-common -y
+
+RUN apt-get install -y python3.9
+
+RUN apt install python3-pip -y
 
 WORKDIR /app/api
 
